@@ -1,0 +1,79 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	background-image: linear-gradient(yellow, blue, orange);
+}
+
+main {
+	display: grid;
+	grid-template-columns: 50vw 50vw;
+	grid-template-rows: 100vh;
+	justify-items: center;
+	align-items: center;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: repeat(9, 50px);
+}
+
+button {
+	width: 50px;
+	height: 50px;
+	font-size: x-large;
+}
+
+p {
+	font-size: 50px;
+	padding: 25px;
+	text-align: center;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+#not-solvable p {
+	color: red;
+	font-size: xx-large;
+}
+
+.submit {
+	margin-top: 20px;
+	width: 100px;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+.part1 {
+	background-color: crimson;
+	padding: 30px 50px;
+}
+
+.part2 {
+	background-color: greenyellow;
+	padding: 30px 50px;
+}
+
+.vertical {
+	display: none;
+}
+
+#val {
+	width: 30px;
+}
+
+@media only screen and (max-width: 1150px) {
+	main {
+		display: grid;
+		grid-template-columns: 100%;
+		grid-template-rows: 30px 1fr 30px 1fr 30px;
+	}
+
+	.vertical {
+		display: block;
+	}
+}

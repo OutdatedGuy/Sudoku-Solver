@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/CSS/index.css">
+    <link rel="stylesheet" href="./assets/Puzzles.txt">
+    <title>Sudoku Solver</title>
+</head>
+
+<body>
+    <main>
+        <div class="vertical"></div>
+
+        <div class="part1">
+            <p class="puzzle">Puzzle</p>
+            <div class="container 1" id="container 1"></div>
+            <button type="submit" onclick="solve()" class="submit">Submit</button>
+        </div>
+
+        <div class="vertical"></div>
+
+        <div class="part2">
+            <p class="answer">Answer</p>
+            <div class="container 2" id="container 2"></div>
+            <div id="not-solvable"></div>
+            <button class="submit">Useless</button>
+        </div>
+
+        <div class="vertical"></div>
+    </main>
+
+    <script src="./assets/JS/index.js"></script>
+    <script src="./assets/JS/solver.js"></script>
+</body>
+
+</html>

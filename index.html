@@ -5,26 +5,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="./assets/ICON/favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./assets/CSS/index.css">
     <link rel="stylesheet" href="./assets/Puzzles.txt">
+
     <title>Sudoku Solver</title>
 </head>
 
 <body>
+    <header>
+        <p>
+            Enter your Sudoku Puzzle in the Red Box and it's Answer will appear in the Green Box
+        </p>
+    </header>
+
     <main>
         <div class="vertical"></div>
 
         <div class="part1">
-            <p class="puzzle">Puzzle</p>
+            <p class="puzzle">Enter Puzzle</p>
             <div class="container 1" id="container 1"></div>
-            <button type="submit" onclick="solve()" class="submit">Submit</button>
+            <button type="submit" onclick="solve()" class="submit">Solve</button>
         </div>
 
         <div class="vertical"></div>
 
         <div class="part2">
             <p class="answer">Answer</p>
-            <div class="container 2" id="container 2"></div>
+            <div class="container 2" id="container 2" tabindex="0"></div>
             <div id="not-solvable"></div>
             <button class="submit">Useless</button>
         </div>
@@ -34,6 +51,25 @@
 
     <script src="./assets/JS/index.js"></script>
     <script src="./assets/JS/solver.js"></script>
+
+    <footer>
+        <div class="social">
+            <div>
+                <img
+                    src="https://www.jing.fm/clipimg/full/40-404411_web-symbol-cliparts-transparent-background-website-icon.png">
+                <a href="http://www.OutdatedGuy.rocks" target="_blank"> Website</a>
+            </div>
+            <div>
+                <img src="http://assets.stickpng.com/images/5847f98fcef1014c0b5e48c0.png">
+                <a href="https://github.com/OutdatedGuy" target="blank"> GitHub </a>
+            </div>
+            <div>
+                <img
+                    src="https://lh3.googleusercontent.com/proxy/KlfHnk80m36gNys9KUiiWQONlmTXDLN1JYS3a7XyyMuGI7QvuI3LNCeUy7fIJUbuDbhcE8KE5Yj0rF8HlM6zITUmd6uvTTctHvjlDnbjxEvSsUynNBoCKxQwj4LdjyuI06cU">
+                <a href="https://www.linkedin.com/in/om-phatak" target="blank"> LinkedIn</a>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

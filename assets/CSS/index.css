@@ -4,7 +4,18 @@
 }
 
 html {
-	background-image: linear-gradient(yellow, blue, orange);
+	/* background-image: linear-gradient(red, green, orange, blue, yellow); */
+	background: #c02425; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		#f0cb35,
+		#c02425
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#f0cb35,
+		#c02425
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 main {
@@ -13,6 +24,43 @@ main {
 	grid-template-rows: 100vh;
 	justify-items: center;
 	align-items: center;
+}
+
+header p {
+	font-size: x-large;
+	background-color: royalblue;
+	font-family: "Krona One", sans-serif;
+	color: lightsalmon;
+}
+
+.social {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(100px, 250px));
+	grid-template-rows: 70px;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.social a {
+	text-decoration: none;
+	color: #333;
+	font-size: 2em;
+	font-weight: 800;
+}
+
+.social img {
+	width: 25px;
+	height: 25px;
+}
+
+footer {
+	position: relative;
+	bottom: 0%;
+	width: 100%;
+	height: 70px;
+	background-color: cyan;
+	font-family: "Poppins", sans-serif;
 }
 
 .container {
@@ -24,6 +72,11 @@ button {
 	width: 50px;
 	height: 50px;
 	font-size: xx-large;
+	background-color: whitesmoke;
+}
+
+.pre {
+	background-color: gold;
 }
 
 p {
@@ -33,6 +86,14 @@ p {
 	position: relative;
 	left: 50%;
 	transform: translate(-50%);
+}
+
+.puzzle {
+	font-family: "Lobster", cursive;
+}
+
+.answer {
+	font-family: "Original Surfer", cursive;
 }
 
 #not-solvable p {
@@ -47,6 +108,7 @@ p {
 	left: 50%;
 	transform: translate(-50%);
 	font-size: x-large;
+	font-family: "Freckle Face", cursive;
 }
 
 .part1 {
@@ -106,5 +168,13 @@ p {
 	#val {
 		width: 15px;
 		height: 15px;
+	}
+
+	.social img {
+		display: none;
+	}
+
+	.social a {
+		font-size: 1.5em;
 	}
 }

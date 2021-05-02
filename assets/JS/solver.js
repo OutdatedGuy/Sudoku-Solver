@@ -83,6 +83,7 @@ function getNumbers(arr) {
 
 function solve() {
 	var arr = [];
+    container2.focus();
 
 	for (var i = 0; i < 9; i++) arr[i] = [];
 
@@ -102,7 +103,11 @@ function solve() {
 
 	var blocks = "";
 	for (var i = 0; i < 9; i++)
-		for (var j = 0; j < 9; j++) blocks += `<button>${arr[i][j]}</button>`;
+		for (var j = 0; j < 9; j++) {
+			if (typeof arr[i][j] == "number")
+				blocks += `<button>${arr[i][j]}</button>`;
+			else blocks += `<button class="pre">${arr[i][j]}</button>`;
+		}
 
 	container2.innerHTML = blocks;
 	unSolvable.innerHTML = ``;

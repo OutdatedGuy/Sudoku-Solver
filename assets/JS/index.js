@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 var static = undefined;
 var current;
+
 function increment(id) {
 	if (static == undefined) static = id;
 	else {
@@ -32,9 +33,13 @@ function increment(id) {
 	const num = document.getElementById("val");
 	num.focus();
 	num.oninput = function () {
-		if (isValid(num.value)) Button.innerText = num.value;
-		else Button.innerText = current;
+		if (isValid(num.value)) {
+			Button.innerText = num.value;
+		} else Button.innerText = current;
 		static = undefined;
+
+		Button.style.backgroundColor =
+			Button.innerHTML != 0 ? "darkorange" : "whitesmoke";
 	};
 }
 

@@ -39,7 +39,7 @@ function isSolvable(arr) {
 	var check = [];
 
 	for (var i = 0; i < 9; i++) {
-		for (var k = 0; k < 9; k++) check[k] = 0;
+		for (var k = 0; k < 10; k++) check[k] = 0;
 
 		for (var j = 0; j < 9; j++) {
 			if (check[arr[i][j]] != 0 && arr[i][j] != 0) return false;
@@ -48,7 +48,7 @@ function isSolvable(arr) {
 	}
 
 	for (var i = 0; i < 9; i++) {
-		for (var k = 0; k < 9; k++) check[k] = 0;
+		for (var k = 0; k < 10; k++) check[k] = 0;
 
 		for (var j = 0; j < 9; j++) {
 			if (check[arr[j][i]] != 0 && arr[j][i] != 0) return false;
@@ -58,7 +58,7 @@ function isSolvable(arr) {
 
 	for (var row = 0; row < 9; row += 3) {
 		for (var col = 0; col < 9; col += 3) {
-			for (var k = 0; k < 9; k++) check[k] = 0;
+			for (var k = 0; k < 10; k++) check[k] = 0;
 			for (var i = 0; i < 3; i++) {
 				for (var j = 0; j < 3; j++) {
 					if (
@@ -79,8 +79,6 @@ function getNumbers(arr) {
 	for (var i = 0, k = 0; i < 9; i++)
 		for (var j = 0; j < 9; j++, k++)
 			arr[i][j] = document.getElementById(k).innerText;
-
-	console.log(arr);
 }
 
 function solve() {

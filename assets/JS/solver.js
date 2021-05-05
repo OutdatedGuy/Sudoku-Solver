@@ -16,7 +16,6 @@ function isSafe(arr, x, y, num) {
 }
 
 function Sudoku(arr, x, y) {
-	if (timer > 5) return false;
 	if (y > 8) x++, (y = 0);
 
 	if (x >= 9) return true;

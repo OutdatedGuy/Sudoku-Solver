@@ -44,6 +44,6 @@ function increment(id) {
 }
 
 function isValid(val) {
-	if (val < "0" || val > "9") return false;
+	if (val < "0" || val > "9" || val.length > 1) return false;
 	else return true;
 }

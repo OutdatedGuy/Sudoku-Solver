@@ -16,6 +16,7 @@ function isSafe(arr, x, y, num) {
 }
 
 function Sudoku(arr, x, y) {
+	if (timer > 5) return false;
 	if (y > 8) x++, (y = 0);
 
 	if (x >= 9) return true;
@@ -83,7 +84,7 @@ function getNumbers(arr) {
 
 function solve() {
 	var arr = [];
-    container2.focus();
+	document.getElementById("useless").focus();
 
 	for (var i = 0; i < 9; i++) arr[i] = [];
 
@@ -98,6 +99,7 @@ function solve() {
 	if (!Sudoku(arr, 0, 0)) {
 		unSolvable.innerHTML = `<p>Given Problem is not SOLVABLE!!!</p>`;
 		container2.innerHTML = ``;
+		clearInterval(interval);
 		return 0;
 	}
 

@@ -14,8 +14,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./assets/CSS/index.css">
+    <link rel="stylesheet" href="./assets/CSS/info.css">
     <link rel="stylesheet" href="./assets/Puzzles.txt">
 
     <title>Sudoku Solver</title>
@@ -29,28 +31,69 @@
     </header>
 
     <main>
-        <div class="vertical"></div>
+        <div class="game">
+            <div class="vertical"></div>
 
-        <div class="part1">
-            <p class="puzzle">Enter Puzzle</p>
-            <div class="container 1" id="container 1"></div>
-            <button type="submit" onclick="solve()" class="submit">Solve</button>
+            <div class="part1">
+                <p class="puzzle">Enter Puzzle</p>
+                <div class="container 1" id="container 1"></div>
+                <button type="submit" onclick="solve()" class="submit">Solve</button>
+            </div>
+
+            <div class="vertical"></div>
+
+            <div class="part2" id="part2">
+                <p class="answer">Answer</p>
+                <div class="container 2" id="container 2" tabindex="0"></div>
+                <div id="not-solvable"></div>
+                <button class="submit" onclick="document.getElementById('focus').focus()" id="useless">Useless</button>
+            </div>
+
+            <div class="vertical"></div>
         </div>
 
-        <div class="vertical"></div>
+        <script defer src="./assets/JS/index.js"></script>
+        <script defer src="./assets/JS/solver.js"></script>
 
-        <div class="part2">
-            <p class="answer">Answer</p>
-            <div class="container 2" id="container 2" tabindex="0"></div>
-            <div id="not-solvable"></div>
-            <button class="submit" id="useless">Useless</button>
+        <div id="information">
+            <h1>How it Works!</h1>
+
+            <p>
+                An algorithm called <a href="https://en.wikipedia.org/wiki/Backtracking"
+                    target="_blank">Backtracking</a> is used to solve this type of problems.
+
+                <br><br>
+
+                When the user clicks the <b>Solve</b> button, the values inserted by the user are stored in a 2D
+                array.
+
+                Then the program checks if the sudoku is valid. If it is invalid, a message appears saying 'Given Sudoku
+                is invalid'. If it is valid the <a href="https://www.geeksforgeeks.org/recursion/"
+                    target="_blank">Recursion</a> algorithm is called.
+
+                <br><br>
+
+                Now the program starts from the top-leftmost free element(i.e having value 0) and puts value '1' in it
+                and checks if it does break the <a
+                    href="https://sudoku.com/how-to-play/sudoku-rules-for-complete-beginners/" target="_blank">rules of
+                    Sudoku</a>. If it breaks the rules then it increments the value byone and checks again until a valid
+                value is assigned to that block.
+
+                <br><br>
+
+                After assigning a value to a block, the next block is given focus and goes through the same steps. If
+                for a certain block, none of the value(i.e from '1' to '9') is valid then it goes back to the previous
+                block and increments its value by one. This method of going back to the previous block is called as
+                Backtracking.
+
+                <br><br>
+
+                If the value of top-leftmost free element exceeds '9', then the given problem is not Solvable and a
+                message regarding the same is displayed. You can find the source code <a
+                    href="https://github.com/OutdatedGuy/Sudoku-Solver" target="_blank">HERE</a>.
+            </p>
         </div>
-
-        <div class="vertical"></div>
     </main>
-
-    <script src="./assets/JS/index.js"></script>
-    <script src="./assets/JS/solver.js"></script>
 
     <footer>
         <div class="social">
@@ -58,11 +101,12 @@
                 <a href="http://www.OutdatedGuy.rocks" target="_blank"><img src="./assets/IMG/Website.png"> Website</a>
             </div>
             <div>
-                <a href="https://github.com/OutdatedGuy" target="blank"><img src="./assets/IMG/Github.png"> GitHub</a>
+                <a href="https://github.com/OutdatedGuy" id="focus" target="blank"><img src="./assets/IMG/Github.png">
+                    GitHub</a>
             </div>
             <div>
-                <a href="https://www.linkedin.com/in/om-phatak" target="blank"><img
-                        src="./assets/IMG/LinkedIn.png"> LinkedIn</a>
+                <a href="https://www.linkedin.com/in/om-phatak" target="blank"><img src="./assets/IMG/LinkedIn.png">
+                    LinkedIn</a>
             </div>
         </div>
     </footer>

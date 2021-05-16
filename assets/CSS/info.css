@@ -1,0 +1,31 @@
+#information {
+	text-align: center;
+}
+
+#information p {
+	font-size: 25px;
+	font-family: "Noto Sans", sans-serif;
+	text-align: justify;
+}
+
+#information a {
+	color: beige;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+#information h1 {
+	padding-top: 60px;
+	font-size: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+	#information h1 {
+		padding-top: 25px;
+		font-size: 35px;
+	}
+
+	#information p {
+		font-size: 15px;
+	}
+}

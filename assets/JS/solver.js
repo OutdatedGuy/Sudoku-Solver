@@ -1,6 +1,8 @@
 const container2 = document.getElementById("container 2");
 const unSolvable = document.getElementById("not-solvable");
 
+var timedOut;
+
 function isSafe(arr, x, y, num) {
 	for (var i = 0; i < 9; i++) if (arr[i][y] == num) return false;
 
@@ -16,8 +18,9 @@ function isSafe(arr, x, y, num) {
 }
 
 function Sudoku(arr, x, y) {
-	if (y > 8) x++, (y = 0);
+	if (timedOut) return false;
 
+	if (y > 8) x++, (y = 0);
 	if (x >= 9) return true;
 
 	for (var i = 1; i < 10; i++) {
@@ -83,22 +86,24 @@ function getNumbers(arr) {
 
 function solve() {
 	var arr = [];
-	document.getElementById("useless").focus();
 
 	for (var i = 0; i < 9; i++) arr[i] = [];
 
 	getNumbers(arr);
 
-	if (!isSolvable(arr)) {
-		unSolvable.innerHTML = `<p>Given Problem is not SOLVABLE!!!</p>`;
-		container2.innerHTML = ``;
-		return 0;
-	}
+	timedOut = false;
+	var counter = setTimeout(() => {
+		timedOut = true;
+	}, 2000);
 
-	if (!Sudoku(arr, 0, 0)) {
-		unSolvable.innerHTML = `<p>Given Problem is not SOLVABLE!!!</p>`;
+	if (!isSolvable(arr) || !Sudoku(arr, 0, 0)) {
+		unSolvable.innerHTML = `<p>Given Sudoku is not SOLVABLE!!!</p>`;
 		container2.innerHTML = ``;
-		clearInterval(interval);
+
+		document.getElementById("useless").focus();
+
+		clearTimeout(counter);
+
 		return 0;
 	}
 
@@ -106,12 +111,16 @@ function solve() {
 	for (var i = 0; i < 9; i++)
 		for (var j = 0; j < 9; j++) {
 			if (typeof arr[i][j] == "number")
-				blocks += `<button>${arr[i][j]}</button>`;
+				blocks += `<button id="A-${i}-${j}">${arr[i][j]}</button>`;
 			else blocks += `<button class="pre">${arr[i][j]}</button>`;
 		}
 
 	container2.innerHTML = blocks;
 	unSolvable.innerHTML = ``;
+
+	document.getElementById("A-6-4").focus();
+
+	// clearTimeout(counter);
 
 	return 0;
 }

@@ -1,6 +1,6 @@
 const container = document.getElementById("container 1");
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 	var blocks = "";
 	for (var i = 0; i < 81; i++)
 		blocks += `<button id="${i}" onClick="increment(${i})">0</button>`;
